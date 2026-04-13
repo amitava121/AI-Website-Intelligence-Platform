@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Manrope", ui-sans-serif, system-ui, sans-serif;
+  --color-primary: #0050cb;
+  --color-primary-container: #0066ff;
+  --color-on-primary: #ffffff;
+  --color-primary-fixed: #dae1ff;
+  --color-surface: #f7f9fb;
+  --color-surface-container-lowest: #ffffff;
+  --color-surface-container-low: #f2f4f6;
+  --color-secondary: #515f74;
+  --color-on-surface: #191c1e;
+  --color-outline-variant: #c2c6d8;
+  --color-error: #ba1a1a;
+  --color-error-container: #ffdad6;
+  --color-tertiary: #a33200;
+  --color-tertiary-fixed: #ffdbd0;
+  --color-secondary-container: #d5e3fc;
+  --color-on-secondary-container: #57657a;
+}
+
+body {
+  background-color: var(--color-surface);
+  color: var(--color-on-surface);
+}
+
+.glass-panel {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(24px);
+  border: 1px solid rgba(194, 198, 216, 0.15);
+}
+
+.mesh-bg {
+  background-color: #f7f9fb;
+  background-image: radial-gradient(at 0% 0%, rgba(0, 102, 255, 0.05) 0px, transparent 50%),
+                    radial-gradient(at 100% 100%, rgba(0, 102, 255, 0.08) 0px, transparent 50%);
+}
+
+.box-3d {
+  background: white;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.4s ease;
+  box-shadow:
+    0 1px 1px rgba(0,0,0,0.05),
+    0 2px 2px rgba(0,0,0,0.05),
+    0 4px 4px rgba(0,0,0,0.05),
+    0 8px 8px rgba(0,0,0,0.05),
+    0 16px 16px rgba(0,0,0,0.05),
+    0 32px 32px rgba(0,102,255,0.05);
+  border: 1px solid rgba(0, 102, 255, 0.1);
+  border-radius: 1rem;
+}
+.box-3d:hover {
+  transform: translateY(-12px) rotateX(4deg) rotateY(-2deg);
+  box-shadow:
+    0 20px 40px -10px rgba(0,102,255,0.15),
+    0 30px 60px -15px rgba(0,0,0,0.1);
+}
